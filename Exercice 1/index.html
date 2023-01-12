@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form class="form" id="formContact">
+            <div>
+                <input class="form__input" type="text" name="firstName" id="firstName" placeholder="Firstname">
+                <label class="message-error" for="firstName" id="firstNameError">Renseigner votre prénom.</label>
+            </div>
+            <div>
+                <input class="form__input" type="text" name="lastName" id="lastName" placeholder="Lastname">
+                <label class="message-error" for="lastName" id="lastNameError">Renseigner votree votre nom.</label>
+            </div>
+        </div>
+            <div>
+                <input class="form__input" type="email" name="email" id="email" placeholder="Email address">
+                <label class="message-error" for="email" id="emailError">Renseigner un email valide.</label>
+            </div>
+            <div>
+                <input class="form__input" type="tel" name="phone" id="phone" placeholder="Phone number">
+                <label class="message-error" for="phone" id="phoneError">Renseigner un numéro de téléphone valide.</label>
+            </div>
+        </div>
+        <div class="form__input--textarea__section">
+            <textarea class="form__input form__input--textarea" name="message" id="message"
+                placeholder="Type your message"></textarea>
+            <label class="error-message" for="message" id="messageError">Veuillez renseigner votre message.</label>
+        </div>
+        <button class="form__submit" type="submit">Submit</button>
+    </form>
+    <script src="./app.js"></script>
+</body>
+
+</html>
