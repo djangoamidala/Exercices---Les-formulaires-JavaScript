@@ -97,13 +97,13 @@ if (Object.values(errors).includes(true)) {
         }
     })} else {
     // if not error console.log data form
-    resetFields()
+    formContact.reset()
     }
     if (!Object.values(errors).includes(true)) {
         console.log(formData)
     }
 })
-// clear all fields 
+// clear all fields like reset()
 function resetFields(){
     document.getElementById('firstName').value="";
     document.getElementById('lastName').value=""
