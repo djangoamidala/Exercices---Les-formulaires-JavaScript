@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <<form class="form" id="formContact">
+        <div class="form__align">
+            <div>
+                <input class="form__input" type="text" name="firstName" id="firstName" placeholder="Firstname">
+                <label class="message-error" for="firstName" id="firstNameError">What is your Firstname?</label>
+            </div>
+            <div>
+                <input class="form__input" type="text" name="lastName" id="lastName" placeholder="Lastname">
+                <label class="message-error" for="lastName" id="lastNameError">What is your LastName?</label>
+            </div>
+        </div>
+        <div class="form__align">
+            <div>
+                <input class="form__input" type="email" name="email" id="email" placeholder="Email address">
+                <label class="message-error" for="email" id="emailError">What is your email?.</label>
+            </div>
+            <div>
+                <input class="form__input" type="tel" name="phone" id="phone" placeholder="Phone number">
+                <label class="message-error" for="phone" id="phoneError">What is your phone number?</label>
+            </div>
+        </div>
+        <div class="form__select">
+            <label for="pet-select">Size:</label>
+            <select name="size" id="size-select">
+                <option value="">Please choose size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <label for="pet-select">Ingredient:</label>
+            <select name="size" id="size-select">
+                <option value="">Please choose ingredient</option>
+                <option value="cheese">Cheese</option>
+                <option value="chicken">Chicken</option>
+                <option value="chorizo">Chorizo</option>
+            </select>
+
+
+        </div>
+        <div class="form__button">
+            <button class="form__submit" type="submit">Submit</button>
+        </div>
+        </form>
+
+        <script src="./app.js"></script>
+</body>
+
+</html>
