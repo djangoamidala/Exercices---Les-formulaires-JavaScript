@@ -23,8 +23,18 @@
         </div>
         <div class="form__align">
             <div>
-                <input class="form__input" type="email" name="email" id="email" placeholder="Email address">
-                <label class="message-error" for="email" id="emailError">What is your email?.</label>
+                <input class="form__input" type="text" name="address" id="address" placeholder="Address">
+                <label class="message-error" for="address" id="addressError">What is your address?.</label>
+            </div>
+            <div>
+                <input class="form__input" type="text" name="postalcode" id="postalCode" placeholder="Postal code">
+                <label class="message-error" for="postalcode" id="postalCodeError">What is your postal code?</label>
+            </div>
+        </div>
+        <div class="form__align">
+            <div>
+                <input class="form__input" type="text" name="city" id="city" placeholder="City">
+                <label class="message-error" for="address" id="cityError">What is your City?.</label>
             </div>
             <div>
                 <input class="form__input" type="tel" name="phone" id="phone" placeholder="Phone number">
@@ -33,7 +43,7 @@
         </div>
         <div class="form__select">
             <label for="size-select" class="form__select-size">Size:</label>
-            <select name="size" id="size-select">
+            <select type="select" name="size" id="size-select">
                 <option value="">Please choose size</option>
                 <option value="small">Small</option>
                 <option value="medium">Medium</option>
@@ -43,7 +53,7 @@
         </div>
         <div class="form__select">
             <label class="form__select-ingredient">Ingredient:</label>
-            <select name="ingredient" id="ingredient-select">
+            <select type="select" name="ingredient" id="ingredient-select">
                 <option value="">Please choose ingredient</option>
                 <option value="cheese">Cheese</option>
                 <option value="chicken">Chicken</option>
@@ -52,12 +62,14 @@
             <label for="ingredient-select" class="message-error" id="select-ingredient-error">Please Select ingredient</label>
         </div>
         </div>
+        <textarea class="form__input form__input--textarea" name="message" id="message"
+        placeholder="Type your message"></textarea>
+    <label class="message-error" for="message" id="messageError">Veuillez renseigner votre message.</label>
         <div class="form__button">
             <button class="form__submit" type="submit">Submit</button>
             <button class="form__submit" type="reset">Reset</button>
         </div>
     </form>
-
     <script src="./app.js"></script>
 </body>
 

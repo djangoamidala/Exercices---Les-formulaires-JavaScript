@@ -105,4 +105,3 @@ if (Object.values(errors).includes(true)) {
         alert("Request sent")
     }
 })
-// clear all fields like reset()
