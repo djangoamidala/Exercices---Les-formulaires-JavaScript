@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <<form class="form" id="formContact">
+    <form class="form" id="formContact">
         <div class="form__align">
             <div>
                 <input class="form__input" type="text" name="firstName" id="firstName" placeholder="Firstname">
@@ -32,29 +32,33 @@
             </div>
         </div>
         <div class="form__select">
-            <label for="pet-select">Size:</label>
+            <label for="size-select" class="form__select-size">Size:</label>
             <select name="size" id="size-select">
                 <option value="">Please choose size</option>
                 <option value="small">Small</option>
                 <option value="medium">Medium</option>
                 <option value="large">Large</option>
             </select>
-            <label for="pet-select">Ingredient:</label>
-            <select name="size" id="size-select">
+            <label for="size-select" class="message-error" id="select-size-error">Please Select size</label>
+        </div>
+        <div class="form__select">
+            <label class="form__select-ingredient">Ingredient:</label>
+            <select name="ingredient" id="ingredient-select">
                 <option value="">Please choose ingredient</option>
                 <option value="cheese">Cheese</option>
                 <option value="chicken">Chicken</option>
                 <option value="chorizo">Chorizo</option>
             </select>
-
-
+            <label for="ingredient-select" class="message-error" id="select-ingredient-error">Please Select ingredient</label>
+        </div>
         </div>
         <div class="form__button">
             <button class="form__submit" type="submit">Submit</button>
+            <button class="form__submit" type="reset">Reset</button>
         </div>
-        </form>
+    </form>
 
-        <script src="./app.js"></script>
+    <script src="./app.js"></script>
 </body>
 
 </html>
