@@ -110,38 +110,72 @@ formContact.addEventListener('submit', (event) => {
         formContact.reset()
 
     }
-    if (!Object.values(errors).includes(true)) {
-        for (let i in formData) {
-            for (let j in formData) {
-                if (formData[i] === "small" && formData[j] === "cheese") {
-                    alert("order validated, your pizza costs 10€.")
-                }
-                if (formData[i] === "small" && formData[j] === "chicken") {
-                    alert("order validated, your pizza costs 15€.")
-                }
-                if (formData[i] === "small" && formData[j] === "chorizo") {
-                    alert("order validated, your pizza costs 20€.")
-                }
-                if (formData[i] === "medium" && formData[j] === "cheese") {
-                    alert("order validated, your pizza costs 25€.")
-                }
-                if (formData[i] === "medium" && formData[j] === "chicken") {
-                    alert("order validated, your pizza costs 30€")
-                }
-                if (formData[i] === "medium" && formData[j] === "chorizo") {
-                    alert("order validated, your pizza costs 35€")
-                }
-                if (formData[i] === "large" && formData[j] === "cheese") {
-                    alert("order validated, your pizza costs 40€")
-                }
-                if (formData[i] === "large" && formData[j] === "chicken") {
-                    alert("order validated, your pizza costs 45€")
-                }
-                if (formData[i] === "large" && formData[j] === "chorizo") {
-                    alert("order validated, your pizza costs 50€")
-                }
+    for (let i in formData) {
+        for (let j in formData) {
+            if (formData[i] === "small" && formData[j] === "cheese") {
+                alert("order validated, your pizza costs 10€.")
+            }
+            if (formData[i] === "small" && formData[j] === "chicken") {
+                alert("order validated, your pizza costs 15€.")
+            }
+            if (formData[i] === "small" && formData[j] === "chorizo") {
+                alert("order validated, your pizza costs 20€.")
+            }
+            if (formData[i] === "medium" && formData[j] === "cheese") {
+                alert("order validated, your pizza costs 25€.")
+            }
+            if (formData[i] === "medium" && formData[j] === "chicken") {
+                alert("order validated, your pizza costs 30€")
+            }
+            if (formData[i] === "medium" && formData[j] === "chorizo") {
+                alert("order validated, your pizza costs 35€")
+            }
+            if (formData[i] === "large" && formData[j] === "cheese") {
+                alert("order validated, your pizza costs 40€")
+            }
+            if (formData[i] === "large" && formData[j] === "chicken") {
+                alert("order validated, your pizza costs 45€")
+            }
+            if (formData[i] === "large" && formData[j] === "chorizo") {
+                alert("order validated, your pizza costs 50€")
             }
         }
+    }
+    if (!Object.values(errors).includes(true)) {
+    // search first element in formData with [i]
+    // search second element in formData with [j] 
+    // if two elements match execute alert
+    for (let i in formData) {
+        for (let j in formData) {
+            if (formData[i] === "small" && formData[j] === "cheese") {
+                alert("order validated, your pizza costs 10€.")
+            }
+            if (formData[i] === "small" && formData[j] === "chicken") {
+                alert("order validated, your pizza costs 15€.")
+            }
+            if (formData[i] === "small" && formData[j] === "chorizo") {
+                alert("order validated, your pizza costs 20€.")
+            }
+            if (formData[i] === "medium" && formData[j] === "cheese") {
+                alert("order validated, your pizza costs 25€.")
+            }
+            if (formData[i] === "medium" && formData[j] === "chicken") {
+                alert("order validated, your pizza costs 30€")
+            }
+            if (formData[i] === "medium" && formData[j] === "chorizo") {
+                alert("order validated, your pizza costs 35€")
+            }
+            if (formData[i] === "large" && formData[j] === "cheese") {
+                alert("order validated, your pizza costs 40€")
+            }
+            if (formData[i] === "large" && formData[j] === "chicken") {
+                alert("order validated, your pizza costs 45€")
+            }
+            if (formData[i] === "large" && formData[j] === "chorizo") {
+                alert("order validated, your pizza costs 50€")
+            }
+        }
+    }
     }
     
 })
