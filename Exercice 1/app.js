@@ -102,6 +102,7 @@ if (Object.values(errors).includes(true)) {
     }
     if (!Object.values(errors).includes(true)) {
         console.log(formData)
+        alert("Request sent")
     }
 })
 // clear all fields like reset()
