@@ -1,10 +1,30 @@
 // get form by ID
 const formContact = document.getElementById('formContact')
 
+
 //Remove original action of field which is to refresh page 
 formContact.addEventListener('submit', (event) => {
     event.preventDefault();
 
+
+    function getTotalPrice(somme,productList) {
+        somme = somme + productList
+        return somme
+    }
+    let pizzaPrice = {
+        small: 10,
+        medium: 15,
+        large: 20
+    }
+    let ingredientPrice = {
+        cheese: 1,
+        chicken: 2,
+        chorizo: 3
+    }
+    function getProductPrice(productList,productName) {
+        productNamePrice = Object.values(productList)
+        return productNamePrice[productName];
+    }
     // Get all fields by ID one by one
     const firstNameInput = document.getElementById("firstName");
     const lastNameInput = document.getElementById("lastName");
@@ -71,6 +91,8 @@ formContact.addEventListener('submit', (event) => {
     const addressRegex = /^[a-zA-Z0-9\s,'-]*$/
     const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/
 
+
+
     // We check each field one after another
     if (!formData.firstName || !nameRegex.test(formData.firstName)) {
         // if field are not filled errors = True
@@ -92,10 +114,6 @@ formContact.addEventListener('submit', (event) => {
     if (!formData.ingredientSelect || formData.ingredientSelect == "") {
         errors.ingredientSelect = true;
         ingredientSelectError.style.display = 'block';
-    }
-    if (!formData.message || formData.message.length < 4) {
-        errors.message = true;
-        messageError.style.display = 'block';
     }
     if (!formData.postalCode || !postalCodeRegex.test(formData.postalCode)) {
         errors.postalCode = true;
@@ -137,39 +155,51 @@ formContact.addEventListener('submit', (event) => {
         // if not error console.log data form
         formContact.reset()
     }
+    
     if (!Object.values(errors).includes(true)) {
+        
         console.log(formData)
         // search first element in formData with [i]
         // search second element in formData with [j] 
         // if two elements match execute alert
+
         for (let i in formData) {
             for (let j in formData) {
                 if (formData[i] === "small" && formData[j] === "cheese") {
-                    alert("order validated, your pizza costs 10€.")
+                    result = getTotalPrice(getProductPrice(pizzaPrice,0) ,getProductPrice(ingredientPrice,0))
+                    alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "small" && formData[j] === "chicken") {
-                    alert("order validated, your pizza costs 15€.")
+                    result = getTotalPrice(getProductPrice(pizzaPrice,0) ,getProductPrice(ingredientPrice,1))
+                    alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "small" && formData[j] === "chorizo") {
-                    alert("order validated, your pizza costs 20€.")
+                    result = getTotalPrice(getProductPrice(pizzaPrice,0) ,getProductPrice(ingredientPrice,2))
+                    alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "medium" && formData[j] === "cheese") {
-                    alert("order validated, your pizza costs 25€.")
+                    result = getTotalPrice(getProductPrice(pizzaPrice,1) ,getProductPrice(ingredientPrice,0))
+                    alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "medium" && formData[j] === "chicken") {
-                    alert("order validated, your pizza costs 30€")
+                    result = getTotalPrice(getProductPrice(pizzaPrice,1) ,getProductPrice(ingredientPrice,1))
+                    alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "medium" && formData[j] === "chorizo") {
-                    alert("order validated, your pizza costs 35€")
+                    result = getTotalPrice(getProductPrice(pizzaPrice,1) ,getProductPrice(ingredientPrice,2))
+                    alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "large" && formData[j] === "cheese") {
-                    alert("order validated, your pizza costs 40€")
+                    result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,0))
+                    alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "large" && formData[j] === "chicken") {
-                    alert("order validated, your pizza costs 45€")
+                    result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,1))
+                    alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "large" && formData[j] === "chorizo") {
-                    alert("order validated, your pizza costs 50€")
+                    result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,2))
+                    alert("Votre panier est de " + result + "€.")
                 }
             }
         }

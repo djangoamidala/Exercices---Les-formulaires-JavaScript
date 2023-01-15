@@ -44,7 +44,7 @@
         <div class="form__select">
             <label for="size-select" class="form__select-size">Size:</label>
             <select type="select" name="size" id="size-select">
-                <option value="">Please choose size</option>
+                <option value="" disabled selected hidden>Please choose size</option>
                 <option value="small">Small</option>
                 <option value="medium">Medium</option>
                 <option value="large">Large</option>
@@ -54,7 +54,7 @@
         <div class="form__select">
             <label class="form__select-ingredient">Ingredient:</label>
             <select type="select" name="ingredient" id="ingredient-select">
-                <option value="">Please choose ingredient</option>
+                <option value="" disabled selected hidden>Please choose ingredient</option>
                 <option value="cheese">Cheese</option>
                 <option value="chicken">Chicken</option>
                 <option value="chorizo">Chorizo</option>
@@ -67,9 +67,10 @@
     <label class="message-error" for="message" id="messageError">Veuillez renseigner votre message.</label>
         <div class="form__button">
             <button class="form__submit" type="submit">Submit</button>
-            <button class="form__submit" type="reset">Reset</button>
+            <button class="form__submit" type="reset" >Reset</button>
         </div>
     </form>
+   
     <script src="./app.js"></script>
 </body>
 
