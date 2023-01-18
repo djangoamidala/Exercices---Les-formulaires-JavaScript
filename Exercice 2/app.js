@@ -167,38 +167,48 @@ formContact.addEventListener('submit', (event) => {
             for (let j in formData) {
                 if (formData[i] === "small" && formData[j] === "cheese") {
                     result = getTotalPrice(getProductPrice(pizzaPrice,0) ,getProductPrice(ingredientPrice,0))
+                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
                     alert("Votre panier est de " + result + "€.")
+                    
                 }
                 if (formData[i] === "small" && formData[j] === "chicken") {
-                    result = getTotalPrice(getProductPrice(pizzaPrice,0) ,getProductPrice(ingredientPrice,1))
+                    result = getTotalPrice(getProductPrice(pizzaPrice,0) ,getProductPrice(ingredientPrice,1))*
+                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
                     alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "small" && formData[j] === "chorizo") {
                     result = getTotalPrice(getProductPrice(pizzaPrice,0) ,getProductPrice(ingredientPrice,2))
+                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
                     alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "medium" && formData[j] === "cheese") {
                     result = getTotalPrice(getProductPrice(pizzaPrice,1) ,getProductPrice(ingredientPrice,0))
+                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
                     alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "medium" && formData[j] === "chicken") {
                     result = getTotalPrice(getProductPrice(pizzaPrice,1) ,getProductPrice(ingredientPrice,1))
+                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
                     alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "medium" && formData[j] === "chorizo") {
                     result = getTotalPrice(getProductPrice(pizzaPrice,1) ,getProductPrice(ingredientPrice,2))
+                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
                     alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "large" && formData[j] === "cheese") {
                     result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,0))
+                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
                     alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "large" && formData[j] === "chicken") {
                     result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,1))
+                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
                     alert("Votre panier est de " + result + "€.")
                 }
                 if (formData[i] === "large" && formData[j] === "chorizo") {
                     result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,2))
+                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
                     alert("Votre panier est de " + result + "€.")
                 }
             }
