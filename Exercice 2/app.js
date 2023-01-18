@@ -155,10 +155,11 @@ formContact.addEventListener('submit', (event) => {
         // if not error console.log data form
         formContact.reset()
     }
-    
+
     if (!Object.values(errors).includes(true)) {
         
         console.log(formData)
+        
         // search first element in formData with [i]
         // search second element in formData with [j] 
         // if two elements match execute alert
@@ -204,7 +205,7 @@ formContact.addEventListener('submit', (event) => {
                 if (formData[i] === "large" && formData[j] === "chicken") {
                     result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,1))
                     formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
-                    alert("Votre panier est de " + result + "€.")
+                    alert("Commande valider")
                 }
                 if (formData[i] === "large" && formData[j] === "chorizo") {
                     result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,2))
@@ -214,4 +215,5 @@ formContact.addEventListener('submit', (event) => {
             }
         }
     }
+    
 })
