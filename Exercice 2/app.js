@@ -5,26 +5,6 @@ const formContact = document.getElementById('formContact')
 //Remove original action of field which is to refresh page 
 formContact.addEventListener('submit', (event) => {
     event.preventDefault();
-
-
-    function getTotalPrice(somme,productList) {
-        somme = somme + productList
-        return somme
-    }
-    let pizzaPrice = {
-        small: 10,
-        medium: 15,
-        large: 20
-    }
-    let ingredientPrice = {
-        cheese: 1,
-        chicken: 2,
-        chorizo: 3
-    }
-    function getProductPrice(productList,productName) {
-        productNamePrice = Object.values(productList)
-        return productNamePrice[productName];
-    }
     // Get all fields by ID one by one
     const firstNameInput = document.getElementById("firstName");
     const lastNameInput = document.getElementById("lastName");
@@ -157,63 +137,70 @@ formContact.addEventListener('submit', (event) => {
     }
 
     if (!Object.values(errors).includes(true)) {
-        
+        // if all fields are filled...
         console.log(formData)
+        alert("Commande validée")
         
-        // search first element in formData with [i]
-        // search second element in formData with [j] 
-        // if two elements match execute alert
 
-        for (let i in formData) {
-            for (let j in formData) {
-                if (formData[i] === "small" && formData[j] === "cheese") {
-                    result = getTotalPrice(getProductPrice(pizzaPrice,0) ,getProductPrice(ingredientPrice,0))
-                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
-                    alert("Commande envoyée avec succès")
-                    
-                }
-                if (formData[i] === "small" && formData[j] === "chicken") {
-                    result = getTotalPrice(getProductPrice(pizzaPrice,0) ,getProductPrice(ingredientPrice,1))*
-                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
-                    alert("Commande envoyée avec succès")
-                }
-                if (formData[i] === "small" && formData[j] === "chorizo") {
-                    result = getTotalPrice(getProductPrice(pizzaPrice,0) ,getProductPrice(ingredientPrice,2))
-                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
-                    alert("Commande envoyée avec succès")
-                }
-                if (formData[i] === "medium" && formData[j] === "cheese") {
-                    result = getTotalPrice(getProductPrice(pizzaPrice,1) ,getProductPrice(ingredientPrice,0))
-                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
-                    alert("Commande envoyée avec succès")
-                }
-                if (formData[i] === "medium" && formData[j] === "chicken") {
-                    result = getTotalPrice(getProductPrice(pizzaPrice,1) ,getProductPrice(ingredientPrice,1))
-                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
-                    alert("Commande envoyée avec succès")
-                }
-                if (formData[i] === "medium" && formData[j] === "chorizo") {
-                    result = getTotalPrice(getProductPrice(pizzaPrice,1) ,getProductPrice(ingredientPrice,2))
-                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
-                    alert("Commande envoyée avec succès")
-                }
-                if (formData[i] === "large" && formData[j] === "cheese") {
-                    result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,0))
-                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
-                    alert("Commande envoyée avec succès")
-                }
-                if (formData[i] === "large" && formData[j] === "chicken") {
-                    result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,1))
-                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
-                    alert("Commande envoyée avec succès")
-                }
-                if (formData[i] === "large" && formData[j] === "chorizo") {
-                    result = getTotalPrice(getProductPrice(pizzaPrice,2) ,getProductPrice(ingredientPrice,2))
-                    formContact.appendChild(document.createTextNode("Votre panier est de " + result + " €."));
-                    alert("Commande envoyée avec succès")
-                }
-            }
+        
+    }})
+    const form = document.getElementById('formContact');
+
+        let sizeSelectValid = false;
+        let recipeSelectValid = false;
+        
+        
+        // option value html
+        let pizzaPrice = {
+            small: 10,
+            medium: 15,
+            large: 20
         }
-    }
-    
-})
+        let ingredientPrice = {
+            cheese: 1,
+            chicken: 2,
+            chorizo: 3
+        }
+        
+        const sizeSelect = document.getElementById('size-select');
+        const recipeSelect = document.getElementById('ingredient-select');
+        
+        const totalLabel = document.getElementById('totalLabel');
+        
+        let totalPrice = 0;
+        
+        let sizePrice = 0;
+        let recipePrice = 0;
+        // add Event for know what option is selected and get value
+        sizeSelect.addEventListener('change', () => {
+            const sizeValue = sizeSelect.value;
+            console.log(sizeValue)
+            if (sizeValue && sizeValue.length > 0) {
+                sizePrice = pizzaPrice[sizeValue];
+                sizeSelectValid = true;
+                console.log(sizeValue)
+            } else {
+                sizePrice = 0;
+                sizeSelectValid = false;
+                console.log(sizeValue)
+            }
+            totalLabel.textContent = `Total = ${sizePrice + recipePrice} €`;
+        });
+        
+        recipeSelect.addEventListener('change', () => {
+            const recipeValue = recipeSelect.value;
+            
+            if (recipeValue && recipeValue.length > 0) {
+                recipePrice = ingredientPrice[recipeValue];
+                recipeSelectValid = true;
+                console.log(recipeValue)
+            } else {
+                recipePrice = 0;
+                recipeSelectValid = false;
+                console.log(recipeValue)
+            }
+            totalLabel.textContent = `Total = ${sizePrice + recipePrice} €`;
+        
+        });
+        
+                
